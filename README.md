@@ -18,6 +18,7 @@ ai201-project2-fitfindr-starter/
 ## Setup
 
 **macOS / Linux:**
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -25,6 +26,7 @@ pip install -r requirements.txt
 ```
 
 **Windows:**
+
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
@@ -32,6 +34,7 @@ pip install -r requirements.txt
 ```
 
 Set your Groq API key in a `.env` file (get a free key at [console.groq.com](https://console.groq.com)):
+
 ```
 GROQ_API_KEY=your_key_here
 ```
@@ -43,6 +46,7 @@ GROQ_API_KEY=your_key_here
 Each listing has: `id`, `title`, `description`, `category`, `style_tags`, `size`, `condition`, `price`, `colors`, `brand`, and `platform`.
 
 Load it with:
+
 ```python
 from utils.data_loader import load_listings
 listings = load_listings()
@@ -57,6 +61,7 @@ listings = load_listings()
 - `empty_wardrobe`: a starting template for a new user
 
 Load an example wardrobe with:
+
 ```python
 from utils.data_loader import get_example_wardrobe
 wardrobe = get_example_wardrobe()
@@ -77,20 +82,23 @@ Your README submission must document each tool's name, inputs, and return value.
 **User query:**
 
 **Step 1 — Tool called:**
-- Tool:
-- Input:
+
+- Tool: search_listings
+- Input: description, size, max_price
 - Why this tool:
 - Output:
 
 **Step 2 — Tool called:**
-- Tool:
-- Input:
+
+- Tool: suggest_outfit
+- Input: new_item, wardrobe
 - Why this tool:
 - Output:
 
 **Step 3 — Tool called:**
-- Tool:
-- Input:
+
+- Tool: create_fit_card
+- Input: outfit, new_item
 - Why this tool:
 - Output:
 
@@ -103,11 +111,11 @@ Your README submission must document each tool's name, inputs, and return value.
 <!-- For each tool, describe the specific failure mode and what your agent does in response.
      This maps to the error handling section of the rubric (F5-C1). -->
 
-| Tool | Failure mode | Agent response |
-|------|-------------|----------------|
-| `search_listings` | | |
-| `suggest_outfit` | | |
-| `create_fit_card` | | |
+| Tool              | Failure mode | Agent response |
+| ----------------- | ------------ | -------------- |
+| `search_listings` |              |                |
+| `suggest_outfit`  |              |                |
+| `create_fit_card` |              |                |
 
 ---
 

@@ -15,18 +15,23 @@ You must have at least 3 tools. The three required tools are listed — add any 
 ### Tool 1: search_listings
 
 **What it does:**
+
 <!-- Describe what this tool does in 1–2 sentences -->
 
 **Input parameters:**
+
 <!-- List each parameter, its type, and what it represents -->
+
 - `description` (str): ...
 - `size` (str): ...
 - `max_price` (float): ...
 
 **What it returns:**
+
 <!-- Describe the return value — what fields does a result contain? -->
 
 **What happens if it fails or returns nothing:**
+
 <!-- What should the agent do if no listings match? -->
 
 ---
@@ -34,17 +39,22 @@ You must have at least 3 tools. The three required tools are listed — add any 
 ### Tool 2: suggest_outfit
 
 **What it does:**
+
 <!-- Describe what this tool does in 1–2 sentences -->
 
 **Input parameters:**
+
 <!-- List each parameter, its type, and what it represents -->
+
 - `new_item` (dict): ...
 - `wardrobe` (dict): ...
 
 **What it returns:**
+
 <!-- Describe the return value -->
 
 **What happens if it fails or returns nothing:**
+
 <!-- What should the agent do if the wardrobe is empty or no outfit can be suggested? -->
 
 ---
@@ -52,17 +62,22 @@ You must have at least 3 tools. The three required tools are listed — add any 
 ### Tool 3: create_fit_card
 
 **What it does:**
+
 <!-- Describe what this tool does in 1–2 sentences -->
 
 **Input parameters:**
+
 <!-- List each parameter, its type, and what it represents -->
+
 - `outfit` (str): ...
 - `new_item` (dict): ...
 
 **What it returns:**
+
 <!-- Describe the return value -->
 
 **What happens if it fails or returns nothing:**
+
 <!-- What should the agent do if the outfit data is incomplete? -->
 
 ---
@@ -76,6 +91,7 @@ You must have at least 3 tools. The three required tools are listed — add any 
 ## Planning Loop
 
 **How does your agent decide which tool to call next?**
+
 <!-- Describe the logic your planning loop uses. What does it look at? What conditions change its behavior? How does it know when it's done? -->
 
 ---
@@ -83,6 +99,7 @@ You must have at least 3 tools. The three required tools are listed — add any 
 ## State Management
 
 **How does information from one tool get passed to the next?**
+
 <!-- Describe how your agent stores and accesses state within a session. What data is tracked? How is it passed between tool calls? -->
 
 ---
@@ -91,11 +108,11 @@ You must have at least 3 tools. The three required tools are listed — add any 
 
 For each tool, describe the specific failure mode you're handling and what the agent does in response.
 
-| Tool | Failure mode | Agent response |
-|------|-------------|----------------|
-| search_listings | No results match the query | |
-| suggest_outfit | Wardrobe is empty | |
-| create_fit_card | Outfit input is missing or incomplete | |
+| Tool            | Failure mode                          | Agent response |
+| --------------- | ------------------------------------- | -------------- |
+| search_listings | No results match the query            |                |
+| suggest_outfit  | Wardrobe is empty                     |                |
+| create_fit_card | Outfit input is missing or incomplete |                |
 
 ---
 
@@ -140,13 +157,25 @@ Write out what a full user interaction looks like from start to finish — tool 
 **Example user query:** "I'm looking for a vintage graphic tee under $30. I mostly wear baggy jeans and chunky sneakers. What's out there and how would I style it?"
 
 **Step 1:**
+
 <!-- What does the agent do first? Which tool is called? With what input? -->
 
+The agent first searches for the listings, gets 3 matching listings sorted by relevance, and picks the top result. The search_listings(description, size, max_price) tool/function is called with the given parameters as the input.
+
 **Step 2:**
+
 <!-- What happens next? What was returned from step 1? What tool is called now? -->
 
+Now, given a specific item and the user's current wardrobe, the tool suggests outfit combinations. suggest_outfit(new_item=<band tee>, wardrobe=<user's wardrobe>) tool/function is called now.
+
 **Step 3:**
+
 <!-- Continue until the full interaction is complete -->
 
+The create_fit_card(outfit, new_item) tool is called next. It generates a short description of the complete outfit — the kind of thing someone would caption an Instagram post with.
+
 **Final output to user:**
+
 <!-- What does the user actually see at the end? -->
+
+The user sees the final short description about the outfit.
