@@ -136,3 +136,7 @@ Your README submission must document each tool's name, inputs, and return value.
 3. Build and test each tool individually before connecting them through your planning loop.
 
 Your implementation files go in this same directory. There's no required file structure for your agent code — organize it however makes sense for your design.
+
+## Demo Video
+
+[FitFindr Demo Video](ai201-project2-fitfindr-starter/recording_demo.mp4)
