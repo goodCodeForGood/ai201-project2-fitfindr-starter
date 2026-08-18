@@ -140,3 +140,5 @@ Your implementation files go in this same directory. There's no required file st
 ## Demo Video
 
 [FitFindr Demo Video](ai201-project2-fitfindr-starter/recording_demo.mp4)
+Note: The video size is big, so the demo video link is not opening from this above location link.
+Please open the video directly by going to its location in the directory and clicking on it. You will have to click on "View raw" and download the video to view it.
